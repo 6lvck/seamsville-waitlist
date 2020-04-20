@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <div class="line-stroke-bg"></div>
+    <div class="app">
+        <div class="overlay" id="overlay"></div>
+        <div class="modal" id="modal">
+            <svg id='cancel' cursor='pointer' width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><defs><path id="icon-close_svg__a" d="M0 1.5L1.5 0 8 6.5 14.5 0 16 1.5 9.5 8l6.5 6.5-1.5 1.5L8 9.5 1.5 16 0 14.5 6.5 8z"></path></defs><use xlink:href="#icon-close_svg__a" transform="translate(4 4)"></use></svg>
+            <h1>You've been successfully added to the waitlist</h1>
+        </div>
     <div class="container">
         <div class="logo">
-            <span>Seamville</span>
+            <span>Seamsville</span>
         </div>
     </div>
     <div class="content">
@@ -19,18 +24,18 @@
             <span>Connect with over 1 Million</span>
             
              <span> Fashion</span>
-             <span class="line">Creators <svg class="underline" xmlns="http://www.w3.org/2000/svg" width="170" height="35" viewBox="0 0 137 23"><path fill="none" fill-rule="evenodd" stroke="#FFAD0D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.842 9.327C51.628.37 93.864-.375 134.548 7.094 71.485 6.547 26.976 2.864 2 20.745c18.198-5.87 67.32-23.752 131.677-3.208"></path></svg></span>
+             <span class="line">Creators <svg id="underline" class="underline" xmlns="http://www.w3.org/2000/svg" width="170" height="35" viewBox="0 0 137 23"><path fill="none" fill-rule="evenodd" stroke="#FFAD0D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.842 9.327C51.628.37 93.864-.375 134.548 7.094 71.485 6.547 26.976 2.864 2 20.745c18.198-5.87 67.32-23.752 131.677-3.208"></path></svg></span>
             </h1>
             <p class="text-summary">
                 Join our community to share ideas, find inspiration, and learn from industry leaders. Build your creative career and gain professional experience in the fashion industry.
             </p>
             <div class="join">
-                <form action="">
-                    <div class="input-container">
+                <form id="waitlist-form">
+                    <div class="input-container" id="input-container">
                         <span>Email address</span>
-                        <input type="email" placeholder="Enter your email address">
+                        <input id="email" type="email" placeholder="Enter your email address">
                     </div>
-                    <button>GET EARLY ACCESS</button>
+                    <button id="join">GET EARLY ACCESS</button>
                 </form>
             </div>
       </div>
@@ -57,7 +62,7 @@
         <div class="responsive">
         <div class="container">
             <div class="copyright">
-                <span>©2020 Seamville. All rights reserved</span>
+                <span>©2020 Seamsville. All rights reserved</span>
             </div>
             <div class="social-icons">
                 <img src="/static/facebook.svg" alt="feacebook-icon">
@@ -67,5 +72,7 @@
         </div>
            </div>
     </div>
+</div>
 </body>
+<script src="/scripts/script.js"></script>
 </html>

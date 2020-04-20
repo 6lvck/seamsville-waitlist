@@ -22,8 +22,7 @@ body {
   }
 }
 
-.line-stroke-bg {
-  position: fixed;
+.app {
   background: url("../static/line-background.537a8943.svg");
   width: 100%;
   height: 100vh;
@@ -31,9 +30,45 @@ body {
   background-size: cover;
 }
 
+.app .overlay {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  max-width: 25%;
+  max-height: 40vh;
+  margin: 0 auto;
+  background: #fff;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+
+.modal svg {
+  float: right;
+}
+
+@media (max-width: 758px) {
+  .modal {
+    max-width: 90%;
+  }
+}
+
 .logo {
   padding-top: 10px;
-  position: relative;
 }
 
 .logo span {
@@ -43,7 +78,6 @@ body {
 
 .content {
   padding-top: 20px;
-  position: relative;
   text-align: center;
   padding-left: 400px;
   padding-right: 400px;
@@ -189,11 +223,13 @@ body {
 }
 
 .content .join form button {
+  cursor: pointer;
   margin-left: 10px;
   border-radius: 9px;
   border: none;
   padding: 0 20px;
   background-color: #FFAD0D;
+  min-width: 30%;
   font-size: 15px;
 }
 
@@ -204,10 +240,6 @@ body {
     width: 100%;
     height: 50px;
   }
-}
-
-.footer {
-  position: relative;
 }
 
 .footer .container .large {
