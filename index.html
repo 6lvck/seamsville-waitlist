@@ -10,8 +10,9 @@
     <div class="app">
         <div class="overlay" id="overlay"></div>
         <div class="modal" id="modal">
+            <img src="./static/tick.svg" alt="tick-icon" style="width: 20%;">
             <svg id='cancel' cursor='pointer' width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><defs><path id="icon-close_svg__a" d="M0 1.5L1.5 0 8 6.5 14.5 0 16 1.5 9.5 8l6.5 6.5-1.5 1.5L8 9.5 1.5 16 0 14.5 6.5 8z"></path></defs><use xlink:href="#icon-close_svg__a" transform="translate(4 4)"></use></svg>
-            <h1>You've been successfully added to the waitlist</h1>
+            <h1 id="message">You've been successfully added to the waitlist</h1>
         </div>
     <div class="container">
         <div class="logo">
@@ -74,5 +75,6 @@
     </div>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/scripts/script.js"></script>
 </html>
