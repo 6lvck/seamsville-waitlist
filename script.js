@@ -2,9 +2,9 @@ const waitlistForm = document.getElementById('waitlist-form');
 const inputContainer = document.getElementById('input-container');
 const email = document.getElementById('email');
 const joinButton = document.getElementById('join');
-const modal = document.getElementById('modal');
+const errorModal = document.getElementById('error-modal');
+const modalContent = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
-const line = document.getElementById('underline');
 const cancel = document.getElementById('cancel');
 
 const error  = {};
@@ -33,18 +33,12 @@ waitlistForm.addEventListener('submit', (e) =>{
             joinButton.disabled = true;
             axios.post(`${proxy}https://seamsville.herokuapp.com/api/v1/waitlist/add`, data)
             .then(res =>{
-                console.log(res)
-                modal.style.display = 'block';
-                overlay.style.visibility = 'visible';
-                line.style.visibility = 'hidden';
-                joinButton.innerHTML = 'Get early access';
+                joinButton.innerHTML = " <img src = 'tick.svg' style='width: 25px'>";
                 joinButton.disabled = false;
             })
             .catch(err => {
-                modal.style.display = 'block';
-                overlay.style.visibility = 'visible';
-                line.style.visibility = 'hidden';
-                modal.innerHTML = `
+                errorModal.style.visibility = 'visible';
+                modalContent.innerHTML = `
                 <svg id='cancel' cursor='pointer' width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><defs><path id="icon-close_svg__a" d="M0 1.5L1.5 0 8 6.5 14.5 0 16 1.5 9.5 8l6.5 6.5-1.5 1.5L8 9.5 1.5 16 0 14.5 6.5 8z"></path></defs><use xlink:href="#icon-close_svg__a" transform="translate(4 4)"></use></svg>
                 <img src = 'emoji.svg' style='width: 20%'>
                 <h1>${err.response.data}</h1>
@@ -53,17 +47,10 @@ waitlistForm.addEventListener('submit', (e) =>{
                 joinButton.disabled = false;
                 const cancel = document.getElementById('cancel');
                 cancel.addEventListener('click', ()=>{
-                    modal.style.display = 'none';
-                    overlay.style.visibility = 'hidden';
-                    line.style.visibility = 'visible';
+                    modalContent.style.display = 'none';
+                    errorModal.style.visibility = 'hidden';
                 })
-            })
+            });
     }
-    console.log(data);
     e.preventDefault();
 });
-cancel.addEventListener('click', ()=>{
-    modal.style.display = 'none';
-    overlay.style.visibility = 'hidden';
-    line.style.visibility = 'visible';
-})
