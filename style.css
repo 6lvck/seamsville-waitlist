@@ -33,6 +33,7 @@ body {
 .error-modal-view{
   visibility: hidden;
   position: fixed;
+  text-align: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -44,23 +45,29 @@ body {
 }
 .modal {
   position: relative;
-  top: 50px;
-  left: 0;
-  right: 0;
-  max-width: 25%;
-  max-height: 40vh;
-  background: #fff;
-  color: rgb(0, 0, 0);
-  text-align: center;
+  margin: auto;
+  padding-top: 2.25em;
+  padding-bottom: 3.375em;
+  background-color: #fff;
+  color: black;
+  padding: 10px;
   border-radius: 10px;
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   padding: 10px 20px;
 }
-@media (max-width:992px){
+@media (min-width:450px){
+  .modal{
+    width: 50%;
+  }
+}
+@media (max-width:450px){
   .modal{
     margin-left: 20px;
     margin-right: 20px;
+  }
+}
+@media (min-width:992px){
+  .modal{
+    width: 23%;
   }
 }
 

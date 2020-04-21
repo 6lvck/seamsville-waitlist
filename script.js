@@ -40,7 +40,7 @@ waitlistForm.addEventListener('submit', (e) =>{
                 errorModal.style.visibility = 'visible';
                 modalContent.innerHTML = `
                 <svg id='cancel' cursor='pointer' width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><defs><path id="icon-close_svg__a" d="M0 1.5L1.5 0 8 6.5 14.5 0 16 1.5 9.5 8l6.5 6.5-1.5 1.5L8 9.5 1.5 16 0 14.5 6.5 8z"></path></defs><use xlink:href="#icon-close_svg__a" transform="translate(4 4)"></use></svg>
-                <img src = 'emoji.svg' style='width: 20%'>
+                <img src = 'emoji.svg' style='width: 23%; padding-top:20px'>
                 <h1>${err.response.data}</h1>
                 `;
                 joinButton.innerHTML = 'Get early access';
